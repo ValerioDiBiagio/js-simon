@@ -12,6 +12,8 @@ const numberInput = document.querySelector('input');
 
 const buttonElement = document.querySelector('button');
 
+const numberList = document.getElementById('numbers-list');
+
 
 // creazione countdown
 
@@ -44,3 +46,13 @@ function randomNumbers (min, max) {
 
 const computerNumbers = randomNumbers(1, 50);
 console.log(computerNumbers);
+
+// creazione di li per contenere numeri random
+
+for ( i = 0; i < computerNumbers.length; i++) {
+
+    currentNumber = computerNumbers[i];
+    const listElement = document.createElement('li');
+    listElement.innerHTML = currentNumber;
+    numberList.appendChild(listElement);
+}
